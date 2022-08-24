@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+</head>
+<body>
+<ul>
+    {% for t in list_of_translation %}
+    <li>
+        <h2>{{ t.transaction_id }}</h2>
+        <p>{{ t.time_create }}</p>
+        <hr>
+    </li>
+    {% endfor %}
+</ul>
+    <form method="POST">
+        {% csrf_token %}
+    <table>
+        {{ form }}
+    </table>
+    <input type="submit" value="Отправить транзакцию" >
+</form>
+</body>
+</html>
